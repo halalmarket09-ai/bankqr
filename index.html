@@ -96,11 +96,26 @@ h2 {
     font-size: 13px;
 }
 
+/* تنسيق النص الجديد تحت العنوان */
+.open-link {
+    display: block;
+    color: var(--insta-purple);
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.open-link:hover {
+    text-decoration: underline;
+}
+
 .instructions img {
     width: 100%;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    cursor: pointer; /* لجعل الصورة تبدو كزرار */
+    cursor: pointer;
     transition: transform 0.2s;
 }
 
@@ -110,7 +125,7 @@ h2 {
 
 .instructions h3 {
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     color: #333;
 }
 
@@ -152,13 +167,14 @@ h2 {
             <div class="label">اسم الحساب | Account Name</div>
             <div class="value">حلال ماركت – Halal Market</div>
         </div>
-        
-        <p style="font-size: 13px; color: #666;">* اضغط على صورة التعليمات لفتح التطبيق مباشرة</p>
     </div>
 
     <div class="instructions">
         <h3>طريقة التحويل من InstaPay</h3>
-        <img src="instapay-guide.png" alt="InstaPay Transfer Guide" onclick="openInstaPay()" title="اضغط هنا لفتح التطبيق">
+        
+        <span class="open-link" onclick="openInstaPay()">افتح تطبيق انستا باي</span>
+        
+        <img src="instapay-guide.png" alt="InstaPay Transfer Guide" onclick="openInstaPay()">
     </div>
 
 </div>
