@@ -74,8 +74,7 @@ h2 {
     word-break: break-all;
 }
 
-.copy-btn,
-.open-btn {
+.copy-btn {
     margin-top: 8px;
     padding: 10px 16px;
     border: none;
@@ -86,8 +85,7 @@ h2 {
     font-size: 14px;
 }
 
-.copy-btn:hover,
-.open-btn:hover {
+.copy-btn:hover {
     background: var(--insta-purple-dark);
 }
 
@@ -102,6 +100,12 @@ h2 {
     width: 100%;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    cursor: pointer; /* لجعل الصورة تبدو كزرار */
+    transition: transform 0.2s;
+}
+
+.instructions img:active {
+    transform: scale(0.98);
 }
 
 .instructions h3 {
@@ -110,7 +114,6 @@ h2 {
     color: #333;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .layout {
         flex-direction: column;
@@ -123,7 +126,6 @@ h2 {
 
 <div class="container">
 
-<!-- Header -->
 <div class="header">
     <img src="banque-misr-logo.png" alt="Banque Misr Logo">
     <h2>تحويل إنستاباي – حلال ماركت</h2>
@@ -131,9 +133,7 @@ h2 {
 
 <div class="layout">
 
-    <!-- Left: Data -->
     <div class="data">
-
         <div class="field">
             <div class="label">اسم البنك | Bank Name</div>
             <div class="value">بنك مصر – Banque Misr</div>
@@ -152,18 +152,13 @@ h2 {
             <div class="label">اسم الحساب | Account Name</div>
             <div class="value">حلال ماركت – Halal Market</div>
         </div>
-
-        <!-- Open InstaPay -->
-        <button class="open-btn" onclick="openInstaPay()">
-            فتح تطبيق InstaPay
-        </button>
-
+        
+        <p style="font-size: 13px; color: #666;">* اضغط على صورة التعليمات لفتح التطبيق مباشرة</p>
     </div>
 
-    <!-- Right: Instructions -->
     <div class="instructions">
         <h3>طريقة التحويل من InstaPay</h3>
-        <img src="instapay-guide.png" alt="InstaPay Transfer Guide">
+        <img src="instapay-guide.png" alt="InstaPay Transfer Guide" onclick="openInstaPay()" title="اضغط هنا لفتح التطبيق">
     </div>
 
 </div>
@@ -184,7 +179,6 @@ function copyText(elementId, msgId) {
 }
 
 function openInstaPay() {
-    // Deep link (يفتح التطبيق لو موجود)
     window.location.href = "instapay://";
 }
 </script>
