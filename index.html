@@ -17,6 +17,7 @@ body {
     background: var(--bg-light);
     margin: 0;
     padding: 20px;
+    direction: rtl; /* لضمان اتجاه النص العربي من اليمين لليسار */
 }
 
 .container {
@@ -96,19 +97,17 @@ h2 {
     font-size: 13px;
 }
 
-/* تنسيق النص الجديد تحت العنوان */
-.open-link {
-    display: block;
+/* تنسيق خطوات التعليمات الجديد */
+.step-item {
     color: var(--insta-purple);
     font-weight: bold;
-    text-decoration: none;
-    margin-bottom: 12px;
-    cursor: pointer;
     font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
 }
 
-.open-link:hover {
-    text-decoration: underline;
+.clickable-step {
+    cursor: pointer;
 }
 
 .instructions img {
@@ -117,6 +116,7 @@ h2 {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     cursor: pointer;
     transition: transform 0.2s;
+    margin-top: 10px;
 }
 
 .instructions img:active {
@@ -125,8 +125,10 @@ h2 {
 
 .instructions h3 {
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -172,7 +174,13 @@ h2 {
     <div class="instructions">
         <h3>طريقة التحويل من InstaPay</h3>
         
-        <span class="open-link" onclick="openInstaPay()">افتح تطبيق انستا باي</span>
+        <div class="step-item clickable-step" onclick="openInstaPay()">
+            01 - افتح تطبيق انستا باي
+        </div>
+
+        <div class="step-item">
+            02 - اتبع التعليمات التالية
+        </div>
         
         <img src="instapay-guide.png" alt="InstaPay Transfer Guide" onclick="openInstaPay()">
     </div>
